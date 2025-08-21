@@ -21,5 +21,8 @@ class LaravelPaymentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/laravel-payment.php' => config_path('laravel-payment.php'),
         ], 'config');
+        
+
+
     }
 }
