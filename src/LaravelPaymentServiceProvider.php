@@ -21,7 +21,11 @@ class LaravelPaymentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/laravel-payment.php' => config_path('laravel-payment.php'),
         ], 'config');
-        
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                \Datdoan\LaravelPayment\Console\InstallPaymentCommand::class,
+            ]);
+        }
 
 
     }
